@@ -1,6 +1,7 @@
 import random
 from pico2d import *
 
+global a,b
 class Pokemon:
     PIXEL_PER_METER = (10.0 / 0.3)
     RUN_SPEED_KMPH = 20.0
