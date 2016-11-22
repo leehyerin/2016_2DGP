@@ -8,3 +8,10 @@ class Map:
 
     def draw(self):
         self.image.clip_draw_to_origin(0, 0, 800, 600, 0, 0)
+
+class Map2:
+    def __init__(self):
+        self.image = load_image('stage2.png')
+
+    def draw(self):
+        self.image.clip_draw_to_origin(0, 0, 800, 600, 0, 0)
