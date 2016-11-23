@@ -20,6 +20,8 @@ class Pokemon:
         self.x, self.y = random.randint(50, 600), random.randint(50, 500)
         self.frame = random.randint(0, 2)
         self.idle_frames = 0
+        self.timer = 0
+
         # self.attack_frames=0
         #projectile = list()
 
@@ -36,17 +38,21 @@ class Pokemon:
 
 
     def handle_asleep(self):
+
         self.idle_frames += 1
-        if self.idle_frames == 15:
+        if self.idle_frames == 20:
             self.state = random.randint(0, 7)
+            self.idle_frames = 0
 
     def handle_left_idle(self):
         self.x -= 2* self.distance
-        self.idle_frames += 1
+        timer = SDL_GetTicks()
+        #self.idle_frames += 1
 
-        if self.idle_frames == 20:
+        if SDL_GetTicks() - timer > 3000:
             self.state =  random.randint(0,8)
-            self.idle_frames=0
+            timer = SDL_GetTicks()
+            #self.idle_frames=0
 
     def handle_right_idle(self):
         self.x +=2*  self.distance
@@ -66,14 +72,18 @@ class Pokemon:
 
     def handle_down_idle(self):
         self.y -= 2*  self.distance
-        self.idle_frames += 1
+
         if self.idle_frames == 20:
             self.state = random.randint(0,8)
             self.idle_frames = 0
 
     def handle_left_run(self):
         self.x -=  5*self.distance
+        self.idle_frames += 1
 
+        if self.idle_frames == 20:
+            self.state = random.randint(0, 8)
+            self.idle_frames = 0
         if self.x < 50:
             self.state= self.RIGHT_RUN
 
@@ -81,6 +91,7 @@ class Pokemon:
         self.x +=  5*self.distance
         if self.x > 750:
             self.state= self.LEFT_RUN
+
 
     def handle_up_run(self):
         self.y += 5* self.distance
@@ -154,7 +165,10 @@ class Pokemon:
 
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self)
-        delay(0.02)
+
+
+        #print(self.state)
+        #delay(0.02)
 
 
 
@@ -167,10 +181,6 @@ class Pokemon:
             self.image.clip_draw(0, 5+self.state * 55, 53, 53, self.x, self.y)
         else:
             self.image.clip_draw(self.frame * 59, self.state * 57, 59, 57, self.x, self.y)
-
-
-
-
 
 
 
@@ -205,10 +215,10 @@ class Projectile:
             self.state = self.DOWN
 
     def create_left(self):
-        self.x -= 5*self.distance
+        self.x -= 5 * self.distance
 
     def create_right(self):
-        self.x +=5*self.distance
+        self.x +=5 * self.distance
 
     def create_up(self):
         self.y += 5*self.distance

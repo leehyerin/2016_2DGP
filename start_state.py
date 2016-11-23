@@ -23,7 +23,7 @@ def update(frame_time):
 
     if (logo_time > 0.2):
         logo_time = 0
-        game_framework.push_state(title_state)
+        game_framework.change_state(title_state)
         #game_framework.quit()
     logo_time += frame_time
 

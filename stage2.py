@@ -2,7 +2,7 @@ from pico2d import *
 
 import game_framework
 import title_state
-from Map2  import *
+from Map import *
 
 from Trainer import *
 from Pokemon import *
@@ -45,7 +45,7 @@ def destroy_world():
     del(timeing)
 
 
-image = load_image('m2.png')
+#image = load_image('stage2.png')
 
 
 def enter():

@@ -3,7 +3,7 @@ from pico2d import *
 
 
 import main_state
-
+import main_state
 
 name = "TitleState"
 image = None
@@ -16,7 +16,7 @@ def exit():
     global image
     del(image)
 
-import main_state
+
 
 def pause():
     pass

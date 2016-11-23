@@ -23,7 +23,6 @@ timeing=None
 
 def create_world():
     global map, pokeball,trainer1,trainer2,trainer3,font,pokemons, selection, projectiles, timeing
-    open_canvas(800, 600)
     timeing=Time()
     map = Map()
     pokeball = Pokeball()
@@ -47,13 +46,11 @@ def skill(Pokemon):
 
 
 def enter():
-    open_canvas()
     game_framework.reset_time()
     create_world()
 
 def exit():
     destroy_world()
-    close_canvas()
 
 
 def handle_events(frame_time):
@@ -71,8 +68,9 @@ def handle_events(frame_time):
             elif (event.type ,event.key)==(SDL_KEYDOWN,SDLK_n):
                 game_framework.change_state(stage2)
             elif event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
+                #print(event.x, 600 - event.y)
                 for pokemon in pokemons:
-                    if point_collide(pokemon,event.x,event.y):
+                    if point_collide(pokemon,event.x, 600 - event.y):
                         pokemon.selection = True
                     else:
                         pokemon.selection = False
@@ -85,7 +83,7 @@ def handle_events(frame_time):
 
 
 def point_collide(self,x,y):
-    if(self.x - 50 < x < self.x + 50) and (self.y - 50 < y < self.y + 50):
+    if(self.x - 50 < x and x < self.x + 50) and (self.y - 50 < y and y < self.y + 50):
         print("chong doll")
         return True
 
