@@ -166,8 +166,8 @@ class Pokemon:
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self)
 
-
-        #print(self.state)
+        if(self.selection==True):
+            print(self.state)
         #delay(0.02)
 
 
