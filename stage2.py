@@ -109,8 +109,8 @@ def handle_events(frame_time):
         else:
             if (event.type, event.key) == (SDL_KEYDOWN, SDLK_ESCAPE):
                 game_framework.change_state(title_state)
-            elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_n):
-                game_framework.change_state(stage2)
+           # elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_n):
+            #    game_framework.change_state(stage3)
 
             elif (event.type ,event.key)==(SDL_KEYDOWN,SDLK_SPACE):
                 for pokemon in pokemons:
@@ -118,7 +118,7 @@ def handle_events(frame_time):
                         skill(pokemon)
             elif event.type == SDL_MOUSEBUTTONDOWN and event.button == SDL_BUTTON_LEFT:
                 for pokemon in pokemons:
-                    if point_collide(pokemon,event.x,event.y):
+                    if point_collide(pokemon,event.x,600-event.y):
                         pokemon.selection = True
                     else:
                         pokemon.selection = False
@@ -131,8 +131,8 @@ def handle_events(frame_time):
 
 
 def point_collide(self,x,y):
-    if(self.x - 50 < x < self.x + 50) and (self.y - 50 < y < self.y + 50):
-        print("chong doll")
+    if (self.x - 30 < x and x < self.x + 30) and (self.y - 30 < y and y < self.y + 30):
+        print("collide")
         return True
 
 
@@ -158,7 +158,7 @@ def update(frame_time):
          pokeball.hp-=10
     elif trainer1.hp <= 0:
         trainer1.x=-100
-
+    delay(0.05)
     timeing.update(frame_time)
 
 
@@ -167,7 +167,7 @@ def update(frame_time):
     for projectile in projectiles:
         projectile.update(frame_time)
         if collide(projectile, trainer1) :
-            trainer1.hp -= 50
+            trainer1.hp -= 25
             projectiles.remove(projectile)
 
 
