@@ -83,8 +83,8 @@ def handle_events(frame_time):
 
 
 def point_collide(self,x,y):
-    if(self.x - 50 < x and x < self.x + 50) and (self.y - 50 < y and y < self.y + 50):
-        print("chong doll")
+    if(self.x - 30 < x and x < self.x + 30) and (self.y - 30 < y and y < self.y + 30):
+        print("collide")
         return True
 
 
@@ -110,7 +110,7 @@ def update(frame_time):
          pokeball.hp-=10
     elif trainer1.hp <= 0:
         trainer1.x=-100
-
+    delay(0.05 )
     timeing.update(frame_time)
 
 
@@ -119,7 +119,7 @@ def update(frame_time):
     for projectile in projectiles:
         projectile.update(frame_time)
         if collide(projectile, trainer1) :
-            trainer1.hp -= 50
+            trainer1.hp -= 25
             projectiles.remove(projectile)
 
 
