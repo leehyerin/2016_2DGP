@@ -4,7 +4,7 @@ class Pokeball:
     def __init__(self):
         self.x,self.y= 750, 300
         self.hp =1000
-        self.image=load_image('Pokeball.gif')
+        self.image=load_image('resource/etc/Pokeball.gif')
         self.font = load_font('ENCR10B.TTF')
 
     def draw(self):

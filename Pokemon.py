@@ -18,6 +18,7 @@ class Pokemon:
         self.type = type
         self.selection = True
         self.x, self.y = random.randint(50, 600), random.randint(50, 500)
+
         self.frame = random.randint(0, 2)
         self.idle_frames = 0
         self.timer = 0
@@ -27,13 +28,14 @@ class Pokemon:
 
         self.state = random.randint(self.RIGHT_IDLE, self.ASLEEP)
         if self.type == 0:
-            self.image = load_image('marill.png')
+            self.image = load_image('resource/pokemon/marill.png')
         elif self.type == 1:
-            self.image = load_image('bayleaf.png')
+            self.image = load_image('resource/pokemon/bayleaf.png')
         elif self.type == 2:
-            self.image = load_image('piri.png')
+            self.image = load_image('resource/pokemon/piri.png')
         elif self.type == 3:
-            self.image = load_image('digda.png')
+            self.image = load_image('resource/pokemon/digda.png')
+
 
 
 

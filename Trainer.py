@@ -51,23 +51,29 @@ class Trainer:
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self)
 
-    def __init__(self):
+    def __init__(self,stage):
+        self.stage=stage
         self.type = random.randint( 0,2)
-        self.x, self.y= 20,300
-        self.hp = 100
+        if self.stage == 1:
+            self.x, self.y= 20,300
+            self.state = self.RIGHT_RUN
+        elif self.stage == 2:
+            self.x, self.y= 180,10
+            self.state = self.UP_RUN
+
+        self.hp = 1000
         self.frame =0
         self.total_frames = 0.0
         self.dir = 1
-        self.state = self.RIGHT_RUN
         self.font = load_font('ENCR10B.TTF')
 
 
         if self.type == self.JIWOO:
-            self.image = load_image('jiwoo.png')
+            self.image = load_image('resource/trainer/jiwoo.png')
         elif self.type == self.YISEUL:
-            self.image = load_image('yiseul.png')
+            self.image = load_image('resource/trainer/yiseul.png')
         elif self.type == self.WOONG:
-            self.image = load_image('woong.png')
+            self.image = load_image('resource/trainer/woong.png')
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())

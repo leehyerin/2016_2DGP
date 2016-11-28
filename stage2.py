@@ -10,8 +10,6 @@ from Projectile import *
 from Pokeball import *
 from TIme import*
 
-name = "MainState"
-
 map=None
 pokeball=None
 font=None
@@ -26,11 +24,12 @@ image = None
 
 def create_world():
     global map, pokeball,trainer1,font,pokemons, selection, projectiles, timeing
-    open_canvas(800, 600)
     timeing=Time()
     map = Map2()
+
     pokeball = Pokeball()
-    trainer1 = Trainer()
+    trainer1 = Trainer(2)
+
     projectiles=list()
     pokemons = [Pokemon(i) for i in range(3)]
 
@@ -50,13 +49,11 @@ def destroy_world():
 
 def enter():
     global image
-    open_canvas()
     game_framework.reset_time()
     create_world()
 
 def exit():
     destroy_world()
-    close_canvas()
 
 
 def handle_events(frame_time):

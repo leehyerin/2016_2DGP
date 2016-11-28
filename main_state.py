@@ -26,9 +26,9 @@ def create_world():
     timeing=Time()
     map = Map()
     pokeball = Pokeball()
-    trainer1 = Trainer()
+    trainer1 = Trainer(1)
     projectiles=list()
-    pokemons = [Pokemon(i) for i in range(3)]
+    pokemons = [Pokemon(i) for i in range(4)]
 
 
 

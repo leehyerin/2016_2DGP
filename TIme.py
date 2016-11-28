@@ -9,4 +9,4 @@ class Time:
         self.time = get_time()
 
     def draw(self):
-        self.font.draw(500,550,"Time : %f " % self.time)
+        self.font.draw(50,550,"Time : %f " % self.time)
