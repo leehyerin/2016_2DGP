@@ -2,7 +2,7 @@ import random
 from pico2d import *
 
 
-class Trainer:
+class Trainer():
 
     PIXEL_PER_METER = (10.0 / 0.3)   #10pixel이 30cm임
     RUN_SPEED_KMPH = 10.0
@@ -13,28 +13,28 @@ class Trainer:
     RIGHT_RUN, LEFT_RUN, DOWN_RUN, UP_RUN = 0, 1, 2, 3
     JIWOO, YISEUL, WOONG = 0,1,2
 
-    def handle_left_run(self):
-        self.x -= 5
+    def handle_left_run(self,distance):
+        self.x -= 5 * distance
         if self.x <10:
             self.state = self.RIGHT_RUN
             self.x = 10
 
-    def handle_right_run(self):
-        self.x += 5
+    def handle_right_run(self,distance):
+        self.x += 5 * distance
 
         if self.x > 800:
             self.state = self.LEFT_RUN
             self.x = 800
 
 
-    def handle_up_run(self):
-        self.y += 5
+    def handle_up_run(self,distance):
+        self.y += 5 * distance
         if self.y > 600:
             self.state = self.DOWN_RUN
             self.y = 600
 
-    def handle_down_run(self):
-        self.y -= 5
+    def handle_down_run(self,distance):
+        self.y -= 5 * distance
         if self.y < 0:
             self.state = self.UP_RUN
             self.y = 60
@@ -49,10 +49,11 @@ class Trainer:
     def update(self,frame_time):
         distance = Trainer.RUN_SPEED_PPS * frame_time
         self.frame = (self.frame + 1) % 3
-        self.handle_state[self.state](self)
+        self.handle_state[self.state](self,distance)
 
     def __init__(self,stage):
         self.stage=stage
+        global distance
         self.type = random.randint( 0,2)
         if self.stage == 1:
             self.x, self.y= 20,300
