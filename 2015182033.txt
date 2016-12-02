@@ -1,3 +1,5 @@
+Tue Nov 29 03:01:03 2016 +0900 resource
+Tue Nov 29 03:00:32 2016 +0900 folder organize
 Sun Nov 27 23:59:06 2016 +0900 stage2
 Sun Nov 27 23:58:52 2016 +0900 stage2
 Fri Nov 25 01:12:52 2016 +0900 pokemon->print

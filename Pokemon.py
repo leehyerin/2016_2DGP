@@ -47,7 +47,7 @@ class Pokemon:
             self.idle_frames = 0
 
     def handle_left_idle(self):
-        self.x -= 2* self.distance
+        self.x -= 2 * self.distance
         timer = SDL_GetTicks()
         #self.idle_frames += 1
 
@@ -57,7 +57,7 @@ class Pokemon:
             #self.idle_frames=0
 
     def handle_right_idle(self):
-        self.x +=2*  self.distance
+        self.x +=2 *  self.distance
         self.idle_frames += 1
 
         if self.idle_frames == 20:
@@ -65,7 +65,7 @@ class Pokemon:
             self.idle_frames = 0
 
     def handle_up_idle(self):
-        self.y +=2*  self.distance
+        self.y +=2 *  self.distance
         self.idle_frames += 1
 
         if self.idle_frames == 20:
@@ -73,14 +73,14 @@ class Pokemon:
             self.idle_frames = 0
 
     def handle_down_idle(self):
-        self.y -= 2*  self.distance
+        self.y -= 2 * self.distance
 
         if self.idle_frames == 20:
             self.state = random.randint(0,8)
             self.idle_frames = 0
 
     def handle_left_run(self):
-        self.x -=  5*self.distance
+        self.x -=  5 * self.distance
         self.idle_frames += 1
 
         if self.idle_frames == 20:
@@ -90,19 +90,19 @@ class Pokemon:
             self.state= self.RIGHT_RUN
 
     def handle_right_run(self):
-        self.x +=  5*self.distance
+        self.x +=  5 * self.distance
         if self.x > 750:
             self.state= self.LEFT_RUN
 
 
     def handle_up_run(self):
-        self.y += 5* self.distance
+        self.y += 5 * self.distance
 
         if self.y > 450:
             self.state= self.DOWN_RUN
 
     def handle_down_run(self):
-        self.y -= 5* self.distance
+        self.y -= 5 * self.distance
 
         if self.y < 50:
             self.state= self.UP_RUN

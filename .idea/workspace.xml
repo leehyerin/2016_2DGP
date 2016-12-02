@@ -2,76 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fa3cdfe-9878-43ed-b32f-af18de969627" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/Github.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Github.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pokeball.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/animation_sheet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/14793.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/14966.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/40562.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/94d51e017473.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/DS DSi - Pokemon Mystery Dungeon Explorers of Time Darkness - Dragon Attack Effects.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/FFIVAttackEffects.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/Game Boy Advance - Pokemon Mystery Dungeon Red Rescue Team - Rock Attack Effects.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/attack sprites.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attack/effects2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bayleaf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/bayleap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/diglett.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/marill.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/pikachu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/piri.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/psyduck.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/고라파덕.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/닥트리오.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/디그다.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/물.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/베이리프.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/파이리.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/pokemon/피카츄.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/bw2_girl_overworld__rpgxp__by_rafael_animal-d4w9gsm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/jiwoo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/pokemon__anime__ash_overworld_sprite_by_zender1752-daesplt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/pokemon__anime__james_kojiro_overworld_sprite_by_zender1752-daf9sfg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/pokemon__anime__jessie_musashi_overworld_sprite_by_zender1752-daf9sfm.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/pokemon__anime__misty_kasumi_overworld_sprite_by_zender1752-daex7n8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/pokemon__xy_bonnie_eureka_overworld_sprite_by_zender1752-dacmr0w.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/trainer_blue_and_prof_oak_bw_by_tebited15-d4dnjqw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/woong.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/character/trainer/yiseul.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/digda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/grass.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiwoo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jiwoo_sprite_sheet.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kpu_credit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mapstage2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/marill.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/marill1000.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/marill_asleep.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/marill_idle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/piri.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/piri_attack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/run_animation.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stage1map.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stage2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/title.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/title.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/woong.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/yiseul.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2015182033.txt" afterPath="$PROJECT_DIR$/2015182033.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map.py" afterPath="$PROJECT_DIR$/Map.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pokeball.py" afterPath="$PROJECT_DIR$/Pokeball.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pokemon.py" afterPath="$PROJECT_DIR$/Pokemon.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TIme.py" afterPath="$PROJECT_DIR$/TIme.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trainer.py" afterPath="$PROJECT_DIR$/Trainer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_state.py" afterPath="$PROJECT_DIR$/main_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stage2.py" afterPath="$PROJECT_DIR$/stage2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start_state.py" afterPath="$PROJECT_DIR$/start_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/title_state.py" afterPath="$PROJECT_DIR$/title_state.py" />
     </list>
     <ignored path="Github.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,8 +27,8 @@
       <file leaf-file-name="title_state.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/title_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="138">
+              <caret line="11" column="16" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -111,22 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trainer.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Trainer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="stage2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stage2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="391">
               <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
               <folding />
             </state>
@@ -143,11 +64,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pokemon.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Trainer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Trainer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pokemon.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pokemon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="3864">
+              <caret line="168" column="42" selection-start-line="168" selection-start-column="38" selection-end-line="168" selection-end-column="42" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -158,8 +91,18 @@
       <file leaf-file-name="main_state.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
+            <state relative-caret-position="1518">
               <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mygame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mygame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -199,8 +142,8 @@
         <option value="$PROJECT_DIR$/TIme.py" />
         <option value="$PROJECT_DIR$/stage2.py" />
         <option value="$PROJECT_DIR$/main_state.py" />
-        <option value="$PROJECT_DIR$/Pokemon.py" />
         <option value="$PROJECT_DIR$/Trainer.py" />
+        <option value="$PROJECT_DIR$/Pokemon.py" />
       </list>
     </option>
   </component>
@@ -236,6 +179,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -256,11 +200,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2DGP/2016-2DGP/Labs/Lab09 - Collision Handling" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2DGP/2016-2DGP/Labs/Lab10 - Scroll and Tiling" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -312,6 +255,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Github" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Trainer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Github" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Trainer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -450,16 +410,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.mygame" />
       <item index="1" class="java.lang.String" itemvalue="Python.main_state" />
       <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Trainer" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.mygame" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main_state" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Trainer" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main_state" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -477,8 +439,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.104166664" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -548,13 +510,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/mygame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -576,16 +532,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/marill1000.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/animation_sheet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/marill1000.png" />
+    <entry file="file://$PROJECT_DIR$/animation_sheet.png" />
     <entry file="file://$PROJECT_DIR$/../2DGP/2016-2DGP/Labs/Lab05/show_files.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -600,26 +548,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/woong.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yiseul.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pokeball.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jiwoo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/woong.png" />
+    <entry file="file://$PROJECT_DIR$/yiseul.png" />
+    <entry file="file://$PROJECT_DIR$/Pokeball.gif" />
+    <entry file="file://$PROJECT_DIR$/jiwoo.png" />
     <entry file="file://$PROJECT_DIR$/marill1.png" />
     <entry file="file://$PROJECT_DIR$/Piri.py" />
     <entry file="file://$PROJECT_DIR$/Bayleaf.py" />
@@ -629,11 +561,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/title.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/title.jpg" />
     <entry file="file://$PROJECT_DIR$/../2DGP/2016-2DGP/Labs/Lab09 - Collision Handling/mygame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -641,26 +569,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/marill.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marill_asleep.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/marill.png" />
+    <entry file="file://$PROJECT_DIR$/marill_asleep.png" />
     <entry file="file://$PROJECT_DIR$/poison.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/title.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/title.png" />
     <entry file="file://$PROJECT_DIR$/../../eeeso0-2d-game-programming-d386e4db39a0/eeeso0-2d-game-programming-d386e4db39a0/project/MyGame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -675,11 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stage1map.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stage1map.png" />
     <entry file="file://$PROJECT_DIR$/../2차발표/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -695,24 +607,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/" />
-    <entry file="file://$PROJECT_DIR$/bayleaf.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bayleaf.png" />
     <entry file="file://$PROJECT_DIR$/Map2.py" />
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,29 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mygame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2015182033.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/pico2d.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="266" column="0" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,15 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/title_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,6 +649,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2015182033.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TIme.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/title_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -789,35 +683,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TIme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pokemon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stage2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="391">
           <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding />
         </state>
@@ -825,8 +693,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Trainer.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mygame.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pokemon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3864">
+          <caret line="168" column="42" selection-start-line="168" selection-start-column="38" selection-end-line="168" selection-end-column="42" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
