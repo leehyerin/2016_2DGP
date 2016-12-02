@@ -85,3 +85,19 @@ class Trainer():
     def draw(self):
         self.font.draw(self.x-50, self.y + 50, 'HP: %3.2f' % self.hp)
         self.image.clip_draw(88 + self.frame * 51, 2 + self.state*60, 48,58, self.x, self.y)
+
+
+
+class Item():
+    def __init__(self,Trainer):
+        self.type = Trainer.type
+        self.x, self.y = Trainer.x, Trainer.y
+        #if type == 'water':
+        self.image  = load_image('resource/item/water.png')
+
+    def draw(self):
+        self.image.draw(self.x,self.y)
+
+
+    def update(self):
+        pass
