@@ -20,14 +20,16 @@ pokemons =None
 selection = None
 projectiles = None
 timeing=None
+items=None
 
 def create_world():
-    global map, pokeball,trainer1,trainer2,trainer3,font,pokemons, selection, projectiles, timeing
+    global map, pokeball,trainer1,trainer2,trainer3,font,pokemons, selection, projectiles, timeing, items
     timeing=Time()
     map = Map()
     pokeball = Pokeball()
     trainer1 = Trainer(1)
     projectiles=list()
+    items=list()
     pokemons = [Pokemon(i) for i in range(4)]
 
 
@@ -43,6 +45,9 @@ def destroy_world():
 def skill(Pokemon):
     global projectiles
     projectiles.append(Projectile(Pokemon))
+
+def create_item(Trainer):
+    items.append(Item(Trainer))
 
 
 def enter():
@@ -105,11 +110,13 @@ def collide(a,b):
 def update(frame_time):
     global trainer1,trainer2, trainer3
 
+    #timeing
     trainer1.update(frame_time)
     if collide(trainer1, pokeball):
          pokeball.hp-=10
     elif trainer1.hp <= 0:
         trainer1.x=-100
+        create_item(trainer1)
     delay(0.05 )
     timeing.update(frame_time)
 
@@ -119,7 +126,7 @@ def update(frame_time):
     for projectile in projectiles:
         projectile.update(frame_time)
         if collide(projectile, trainer1) :
-            trainer1.hp -= 25
+            trainer1.hp -= 250
             projectiles.remove(projectile)
 
 
@@ -134,6 +141,8 @@ def draw(frame_time):
         pokemon.draw()
     for projectile in projectiles:
         projectile.draw()
+    for item in items:
+        item.draw()
     update_canvas()
 
 
