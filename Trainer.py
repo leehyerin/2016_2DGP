@@ -11,6 +11,8 @@ class Trainer():
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
 
     RIGHT_RUN, LEFT_RUN, DOWN_RUN, UP_RUN = 0, 1, 2, 3
+    image =None
+
     JIWOO, YISEUL, WOONG = 0,1,2
 
     def handle_left_run(self,distance):
@@ -54,7 +56,7 @@ class Trainer():
     def __init__(self,stage):
         self.stage=stage
         global distance
-        self.type = random.randint( 0,2)
+        self.type = random.choice('wlfte')
         if self.stage == 1:
             self.x, self.y= 20,300
             self.state = self.RIGHT_RUN
@@ -68,13 +70,17 @@ class Trainer():
         self.dir = 1
         self.font = load_font('ENCR10B.TTF')
 
-
-        if self.type == self.JIWOO:
-            self.image = load_image('resource/trainer/jiwoo.png')
-        elif self.type == self.YISEUL:
-            self.image = load_image('resource/trainer/yiseul.png')
-        elif self.type == self.WOONG:
-            self.image = load_image('resource/trainer/woong.png')
+        if Trainer.image == None:
+            if self.type == 'l': #lightning'
+                self.image = load_image('resource/trainer/jiwoo.png')
+            elif self.type == 'w': #water':
+                self.image = load_image('resource/trainer/yiseul.png')
+            elif self.type == 't': #tree
+                self.image = load_image('resource/trainer/woong.png')
+            elif self.type == 'f': #fire
+                self.image = load_image('resource/trainer/woong.png')
+            elif self.type == 'e': #earth
+                self.image = load_image('resource/trainer/woong.png')
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
@@ -89,14 +95,30 @@ class Trainer():
 
 
 class Item():
+    image =None
+
     def __init__(self,Trainer):
         self.type = Trainer.type
         self.x, self.y = Trainer.x, Trainer.y
-        #if type == 'water':
-        self.image  = load_image('resource/item/water.png')
+
+        if Item.image == None:
+
+            if type == 'w':
+                self.image  = load_image('resource/item/water.png')
+            elif type == 'l':
+                self.image  = load_image('resource/item/lightning.png')
+            elif type == 'f':
+                self.image  = load_image('resource/item/fire.png')
+            elif type == 'e':
+                self.image  = load_image('resource/item/earth.png')
+            elif type == 't':
+                self.image  = load_image('resource/item/tree.png')
+
+
 
     def draw(self):
-        self.image.draw(self.x,self.y)
+        if not Item.image None:
+            self.image.draw(self.x,self.y)
 
 
     def update(self):
