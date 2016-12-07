@@ -80,7 +80,7 @@ class Pokemon:
             self.idle_frames = 0
 
     def handle_left_run(self):
-        self.x -=  5 * self.distance
+        self.x -=  10 * self.distance
         self.idle_frames += 1
 
         if self.idle_frames == 20:
@@ -90,19 +90,19 @@ class Pokemon:
             self.state= self.RIGHT_RUN
 
     def handle_right_run(self):
-        self.x +=  5 * self.distance
+        self.x +=  10 * self.distance
         if self.x > 750:
             self.state= self.LEFT_RUN
 
 
     def handle_up_run(self):
-        self.y += 5 * self.distance
+        self.y += 10 * self.distance
 
         if self.y > 450:
             self.state= self.DOWN_RUN
 
     def handle_down_run(self):
-        self.y -= 5 * self.distance
+        self.y -= 10 * self.distance
 
         if self.y < 50:
             self.state= self.UP_RUN
@@ -201,7 +201,8 @@ class Projectile:
 
     def __init__(self, Pokemon):
         self.x,self.y = Pokemon.x,Pokemon.y
-        self.frame=0
+        self.frame = 0
+        self.dead = 10
         if Projectile. image == None:
             self.image = load_image('poison.png')
         self.state = random.randint(self.LEFT, self.DOWN)
@@ -217,16 +218,16 @@ class Projectile:
             self.state = self.DOWN
 
     def create_left(self):
-        self.x -= 5 * self.distance
+        self.x -= 8 * self.distance
 
     def create_right(self):
-        self.x +=5 * self.distance
+        self.x += 8 * self.distance
 
     def create_up(self):
-        self.y += 5*self.distance
+        self.y += 8*self.distance
 
     def create_down(self):
-        self.y -=5*self.distance
+        self.y -= 8*self.distance
 
     handle_state = {
         LEFT: create_left,
@@ -239,8 +240,10 @@ class Projectile:
     def update(self,frame_time):
         self.distance = Projectile.RUN_SPEED_PPS * frame_time
         self.frame = (self.frame + 1) % 4
+        self.dead -=1
         self.handle_state[self.state](self)
-        if self.frame >5:
+
+        if self.frame < 0:
             Projectile.remove()
 
 
