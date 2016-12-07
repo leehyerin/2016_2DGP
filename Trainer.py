@@ -102,23 +102,21 @@ class Item():
         self.x, self.y = Trainer.x, Trainer.y
 
         if Item.image == None:
-
-            if type == 'w':
+            if self.type == 'w':
                 self.image  = load_image('resource/item/water.png')
-            elif type == 'l':
+            elif self.type == 'l':
                 self.image  = load_image('resource/item/lightning.png')
-            elif type == 'f':
+            elif self.type == 'f':
                 self.image  = load_image('resource/item/fire.png')
-            elif type == 'e':
+            elif self.type == 'e':
                 self.image  = load_image('resource/item/earth.png')
-            elif type == 't':
+            elif self.type == 't':
                 self.image  = load_image('resource/item/tree.png')
 
 
 
     def draw(self):
-        if not Item.image None:
-            self.image.draw(self.x,self.y)
+        self.image.draw(self.x,self.y)
 
 
     def update(self):

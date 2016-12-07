@@ -79,6 +79,11 @@ def handle_events(frame_time):
                         pokemon.selection = True
                     else:
                         pokemon.selection = False
+                for item in items:
+                    if point_collide(item,event.x, 600 - event.y):
+                        items.remove(item)
+                        #item.list.append(1)
+
             else:
                 for pokemon in pokemons:
                     if pokemon.selection == True:
@@ -88,7 +93,7 @@ def handle_events(frame_time):
 
 
 def point_collide(self,x,y):
-    if(self.x - 30 < x and x < self.x + 30) and (self.y - 30 < y and y < self.y + 30):
+    if (self.x - 30 < x and x < self.x + 30) and (self.y - 30 < y and y < self.y + 30):
         print("collide")
         return True
 
@@ -115,8 +120,8 @@ def update(frame_time):
     if collide(trainer1, pokeball):
          pokeball.hp-=10
     elif trainer1.hp <= 0:
-        trainer1.x=-100
         create_item(trainer1)
+        trainer1.x=-100
     delay(0.05 )
     timeing.update(frame_time)
 
