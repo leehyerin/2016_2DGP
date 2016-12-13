@@ -1,3 +1,8 @@
+Fri Dec 2 23:53:22 2016 +0900 class Item()추가
+Fri Dec 2 23:52:59 2016 +0900 forder_item
+Fri Dec 2 23:52:39 2016 +0900 item
+Fri Dec 2 10:51:30 2016 +0900 ..
+Wed Nov 30 23:55:37 2016 +0900 물리적 시간,거리 정리
 Tue Nov 29 03:01:03 2016 +0900 resource
 Tue Nov 29 03:00:32 2016 +0900 folder organize
 Sun Nov 27 23:59:06 2016 +0900 stage2

@@ -1,7 +1,6 @@
 from pico2d import *
 
 
-
 class Map:
     def __init__(self):
         self.image = load_image('resource/background/stage1map.png')

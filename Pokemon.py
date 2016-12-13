@@ -28,7 +28,7 @@ class Pokemon:
 
         self.state = random.randint(self.RIGHT_IDLE, self.ASLEEP)
         if self.type == 0:
-            self.image = load_image('resource/pokemon/marill.png')
+            self.image = load_image('resource/pokemon/marill2.png')
         elif self.type == 1:
             self.image = load_image('resource/pokemon/bayleaf.png')
         elif self.type == 2:
@@ -197,7 +197,7 @@ class Projectile:
 
     LEFT, RIGHT, UP, DOWN = 0, 1, 2, 3
 
-    image =None
+    image = None
 
     def __init__(self, Pokemon):
         self.x,self.y = Pokemon.x,Pokemon.y

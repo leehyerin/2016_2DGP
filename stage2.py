@@ -89,7 +89,7 @@ def exit():
     global image
     del(image)
 
-import main_state
+import stage1
 
 def pause():
     pass
