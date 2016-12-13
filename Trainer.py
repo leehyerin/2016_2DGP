@@ -11,9 +11,41 @@ class Trainer():
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
 
     RIGHT_RUN, LEFT_RUN, DOWN_RUN, UP_RUN = 0, 1, 2, 3
-    image =None
+    image = None
 
     JIWOO, YISEUL, WOONG = 0,1,2
+
+    def __init__(self,stage):
+        self.stage=stage
+        global distance
+        self.type = random.choice('wlfte')
+        if self.stage == 1:
+            self.x, self.y= 20,300
+            self.state = self.RIGHT_RUN
+        elif self.stage == 2:
+            self.x, self.y= 180,10
+            self.state = self.UP_RUN
+            self.box0 = Turn_dir(200,280)
+            self.box1 = Turn_dir(480,300)
+
+        self.hp = 1000
+        self.frame =0
+        self.total_frames = 0.0
+        self.dir = 1
+        self.font = load_font('ENCR10B.TTF')
+
+        if Trainer.image == None:
+            if self.type == 'l': #lightning'
+                self.image = load_image('resource/trainer/jiwoo.png')
+            elif self.type == 'w': #water':
+                self.image = load_image('resource/trainer/yiseul.png')
+            elif self.type == 't': #tree
+                self.image = load_image('resource/trainer/woong.png')
+            elif self.type == 'f': #fire
+                self.image = load_image('resource/trainer/woong.png')
+            elif self.type == 'e': #earth
+                self.image = load_image('resource/trainer/woong.png')
+
 
     def handle_left_run(self,distance):
         self.x -= 5 * distance
@@ -27,7 +59,6 @@ class Trainer():
         if self.x > 800:
             self.state = self.LEFT_RUN
             self.x = 800
-
 
     def handle_up_run(self,distance):
         self.y += 5 * distance
@@ -48,39 +79,6 @@ class Trainer():
         DOWN_RUN : handle_down_run
     }
 
-    def update(self,frame_time):
-        distance = Trainer.RUN_SPEED_PPS * frame_time
-        self.frame = (self.frame + 1) % 3
-        self.handle_state[self.state](self,distance)
-
-    def __init__(self,stage):
-        self.stage=stage
-        global distance
-        self.type = random.choice('wlfte')
-        if self.stage == 1:
-            self.x, self.y= 20,300
-            self.state = self.RIGHT_RUN
-        elif self.stage == 2:
-            self.x, self.y= 180,10
-            self.state = self.UP_RUN
-
-        self.hp = 1000
-        self.frame =0
-        self.total_frames = 0.0
-        self.dir = 1
-        self.font = load_font('ENCR10B.TTF')
-
-        if Trainer.image == None:
-            if self.type == 'l': #lightning'
-                self.image = load_image('resource/trainer/jiwoo.png')
-            elif self.type == 'w': #water':
-                self.image = load_image('resource/trainer/yiseul.png')
-            elif self.type == 't': #tree
-                self.image = load_image('resource/trainer/woong.png')
-            elif self.type == 'f': #fire
-                self.image = load_image('resource/trainer/woong.png')
-            elif self.type == 'e': #earth
-                self.image = load_image('resource/trainer/woong.png')
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
@@ -91,11 +89,53 @@ class Trainer():
     def draw(self):
         self.font.draw(self.x-50, self.y + 50, 'HP: %3.2f' % self.hp)
         self.image.clip_draw(88 + self.frame * 51, 2 + self.state*60, 48,58, self.x, self.y)
+        self.draw_bb()
+
+        if self.stage == 2:
+            self.box0.draw()
+
+    def update(self, frame_time):
+        distance = Trainer.RUN_SPEED_PPS * frame_time
+        self.frame = (self.frame + 1) % 3
+        self.handle_state[self.state](self, distance)
+
+        if self.stage == 2:
+            if collide(self, self.box0):
+                if self.state == self.UP_RUN:
+                    self.state = self.RIGHT_RUN
+                elif self.state == self.LEFT_RUN:
+                    self.state = self.DOWN_RUN
+
+
+def collide(a, b):
+    left_a, bottom_a, right_a, top_a = a.get_bb()
+    left_b, bottom_b, right_b, top_b = b.get_bb()
+
+    if left_a > right_b: return False
+    if right_a < left_b: return False
+    if top_a < bottom_b: return False
+    if bottom_a > top_b: return False
+
+    return True
+
+
+class Turn_dir():
+    def __init__(self,x,y):
+        self.x, self.y = x, y
+
+    def get_bb(self):
+        return self.x - 10, self.y - 10, self.x + 10, self.y + 10
+
+    def draw_bb(self):
+        draw_rectangle(*self.get_bb())
+
+    def draw(self):
+        self.draw_bb()
 
 
 
 class Item():
-    image =None
+    image = None
 
     def __init__(self,Trainer):
         self.type = Trainer.type
@@ -112,7 +152,6 @@ class Item():
                 self.image  = load_image('resource/item/earth.png')
             elif self.type == 't':
                 self.image  = load_image('resource/item/tree.png')
-
 
 
     def draw(self):
