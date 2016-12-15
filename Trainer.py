@@ -25,8 +25,8 @@ class Trainer():
         elif self.stage == 2:
             self.x, self.y= 180,10
             self.state = self.UP_RUN
-            self.box0 = Turn_dir(200,280)
-            self.box1 = Turn_dir(480,300)
+            self.box0 = Turn_dir(200,290)
+            self.box1 = Turn_dir(560,290)
 
         self.hp = 1000
         self.frame =0
@@ -93,6 +93,7 @@ class Trainer():
 
         if self.stage == 2:
             self.box0.draw()
+            self.box1.draw()
 
     def update(self, frame_time):
         distance = Trainer.RUN_SPEED_PPS * frame_time
@@ -105,6 +106,11 @@ class Trainer():
                     self.state = self.RIGHT_RUN
                 elif self.state == self.LEFT_RUN:
                     self.state = self.DOWN_RUN
+            if collide(self, self.box1):
+                if self.state == self.RIGHT_RUN:
+                    self.state = self. UP_RUN
+                elif self.state == self.DOWN_RUN:
+                    self.state = self.LEFT_RUN
 
 
 def collide(a, b):
