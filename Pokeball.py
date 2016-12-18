@@ -1,8 +1,13 @@
 from pico2d import *
+global stage
 
 class Pokeball:
-    def __init__(self):
-        self.x,self.y= 750, 300
+    def __init__(self,stage):
+        self.stage = stage
+        if self.stage == 1:
+            self.x, self.y = 750, 300
+        elif self.stage == 2:
+            self.x, self.y = 200, 480
         self.hp =1000
         self.image=load_image('resource/etc/Pokeball.gif')
         self.font = load_font('ENCR10B.TTF')
