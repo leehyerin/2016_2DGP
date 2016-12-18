@@ -48,26 +48,26 @@ class Trainer():
 
 
     def handle_left_run(self,distance):
-        self.x -= 5 * distance
+        self.x -= 6.5 * distance
         if self.x <10:
             self.state = self.RIGHT_RUN
             self.x = 10
 
     def handle_right_run(self,distance):
-        self.x += 5 * distance
+        self.x += 6.5 * distance
 
         if self.x > 800:
             self.state = self.LEFT_RUN
             self.x = 800
 
     def handle_up_run(self,distance):
-        self.y += 5 * distance
+        self.y += 6.5 * distance
         if self.y > 600:
             self.state = self.DOWN_RUN
             self.y = 600
 
     def handle_down_run(self,distance):
-        self.y -= 5 * distance
+        self.y -= 6.5 * distance
         if self.y < 0:
             self.state = self.UP_RUN
             self.y = 60
@@ -78,7 +78,6 @@ class Trainer():
         UP_RUN : handle_up_run,
         DOWN_RUN : handle_down_run
     }
-
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
