@@ -28,14 +28,13 @@ class Pokemon:
 
         self.state = random.randint(self.RIGHT_IDLE, self.ASLEEP)
         if self.type == 0:
-            self.image = load_image('resource/pokemon/marill2.png')
+            self.image = load_image('resource/pokemon/rulili.png')
         elif self.type == 1:
             self.image = load_image('resource/pokemon/bayleaf.png')
         elif self.type == 2:
             self.image = load_image('resource/pokemon/piri.png')
         elif self.type == 3:
             self.image = load_image('resource/pokemon/digda.png')
-
 
 
 
@@ -107,7 +106,6 @@ class Pokemon:
         if self.y < 50:
             self.state= self.UP_RUN
 
-
     handle_state = {
         ASLEEP : handle_asleep,
         LEFT_IDLE : handle_left_idle,
@@ -118,7 +116,6 @@ class Pokemon:
         RIGHT_RUN: handle_right_run,
         UP_RUN: handle_up_run,
         DOWN_RUN: handle_down_run,
-
     }
 
     def handle_event(self, event):
@@ -168,10 +165,10 @@ class Pokemon:
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self)
 
+
+
         if(self.selection==True):
             print(self.state)
-        #delay(0.02)
-
 
 
 
@@ -180,11 +177,9 @@ class Pokemon:
 
     def draw(self):
         if self.state== self.ASLEEP:
-            self.image.clip_draw(0, 5+self.state * 55, 53, 53, self.x, self.y)
+            self.image.clip_draw(0, 5 + self.state * 55, 53, 53, self.x, self.y)
         else:
             self.image.clip_draw(self.frame * 59, self.state * 57, 59, 57, self.x, self.y)
-
-
 
 
 class Projectile:
