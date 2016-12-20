@@ -139,14 +139,14 @@ class Turn_dir():
 
 
 
-class Item():
+class Resource():
     image = None
 
     def __init__(self,Trainer):
         self.type = Trainer.type
         self.x, self.y = Trainer.x, Trainer.y
 
-        if Item.image == None:
+        if Resource.image == None:
             if self.type == 'w':
                 self.image  = load_image('resource/item/water.png')
             elif self.type == 'l':

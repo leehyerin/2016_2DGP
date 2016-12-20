@@ -39,72 +39,149 @@ class Pokemon:
 
 
     def handle_asleep(self):
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
 
-        self.idle_frames += 1
-        if self.idle_frames == 20:
-            self.state = random.randint(0, 7)
-            self.idle_frames = 0
+        if SDL_GetTicks() - timer > 300:
+            self.state = random.randint(0, 8)
+            timer = SDL_GetTicks()
+
+        # if self.idle_frames == 20:
+        #     self.state = random.randint(0, 7)
+        #     self.idle_frames = 0
 
     def handle_left_idle(self):
         self.x -= 2 * self.distance
         timer = SDL_GetTicks()
         #self.idle_frames += 1
+        print("%f" % timer)
 
-        if SDL_GetTicks() - timer > 3000:
+        if SDL_GetTicks() - timer > 300:
             self.state =  random.randint(0,8)
             timer = SDL_GetTicks()
             #self.idle_frames=0
 
     def handle_right_idle(self):
         self.x +=2 *  self.distance
-        self.idle_frames += 1
+        #self.idle_frames += 1
 
-        if self.idle_frames == 20:
-            self.state = random.randint(0,8)
-            self.idle_frames = 0
+        if self.x > 750:
+            self.state= self.LEFT_RUN
+
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
+
+        if SDL_GetTicks() - timer > 300:
+            self.state = random.randint(0, 8)
+            timer = SDL_GetTicks()
+
+
+        # if self.idle_frames == 20:
+        #     self.state = random.randint(0,8)
+        #     self.idle_frames = 0
 
     def handle_up_idle(self):
         self.y +=2 *  self.distance
         self.idle_frames += 1
 
-        if self.idle_frames == 20:
-            self.state = random.randint(0,8)
-            self.idle_frames = 0
+        if self.y > 350:
+            self.state = self.DOWN_RUN
+
+        # if self.idle_frames == 20:
+        #     self.state = random.randint(0,8)
+        #     self.idle_frames = 0
+
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
+
+        if SDL_GetTicks() - timer > 300:
+            self.state = random.randint(0, 8)
+            timer = SDL_GetTicks()
 
     def handle_down_idle(self):
         self.y -= 2 * self.distance
+        self.idle_frames += 1
 
-        if self.idle_frames == 20:
-            self.state = random.randint(0,8)
-            self.idle_frames = 0
+
+        if self.y < 50:
+            self.state= self.UP_RUN
+
+        # if self.idle_frames == 20:
+        #     self.state = random.randint(0,8)
+        #     self.idle_frames = 0
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
+
+        if SDL_GetTicks() - timer > 300:
+            self.state = random.randint(0, 8)
+            timer = SDL_GetTicks()
 
     def handle_left_run(self):
         self.x -=  10 * self.distance
         self.idle_frames += 1
 
-        if self.idle_frames == 20:
+        # if self.idle_frames == 20:
+        #     self.state = random.randint(0, 8)
+        #     self.idle_frames = 0
+
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
+
+        if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
-            self.idle_frames = 0
+            timer = SDL_GetTicks()
+
         if self.x < 50:
             self.state= self.RIGHT_RUN
 
     def handle_right_run(self):
         self.x +=  10 * self.distance
+
         if self.x > 750:
             self.state= self.LEFT_RUN
+
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
+
+        if SDL_GetTicks() - timer > 300:
+            self.state = random.randint(0, 8)
+            timer = SDL_GetTicks()
 
 
     def handle_up_run(self):
         self.y += 10 * self.distance
 
-        if self.y > 450:
+        if self.y > 350:
             self.state= self.DOWN_RUN
+
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
+
+        if SDL_GetTicks() - timer > 300:
+            self.state = random.randint(0, 8)
+            timer = SDL_GetTicks()
 
     def handle_down_run(self):
         self.y -= 10 * self.distance
 
         if self.y < 50:
             self.state= self.UP_RUN
+
+        timer = SDL_GetTicks()
+        # self.idle_frames += 1
+        print("%f" % timer)
+
+        if SDL_GetTicks() - timer > 300:
+            self.state = random.randint(0, 8)
+            timer = SDL_GetTicks()
+            print("%f" %timer)
 
     handle_state = {
         ASLEEP : handle_asleep,
