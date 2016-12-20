@@ -62,6 +62,9 @@ class Pokemon:
             timer = SDL_GetTicks()
             #self.idle_frames=0
 
+        if self.x < 50:
+            self.state= self.RIGHT_RUN
+
     def handle_right_idle(self):
         self.x +=2 *  self.distance
         #self.idle_frames += 1
@@ -242,12 +245,8 @@ class Pokemon:
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self)
 
-
-
         if(self.selection==True):
             print(self.state)
-
-
 
     def get_bb(self):
         return self.x - 30, self.y - 30, self.x + 30, self.y + 30
