@@ -1,6 +1,8 @@
 import random
 from pico2d import *
 
+from TIme import*
+
 global a,b
 class Pokemon:
     PIXEL_PER_METER = (10.0 / 0.3)
@@ -13,16 +15,17 @@ class Pokemon:
     RIGHT_IDLE, LEFT_IDLE, UP_IDLE, DOWN_IDLE = 0,1,2,3
     RIGHT_RUN, LEFT_RUN,  UP_RUN, DOWN_RUN = 4,5,6,7
     RIGHT_ATTACK, LEFT_ATTACK, UP_ATTACK, DOWN_ATTACK = 4,5,6,7
+    FIX_ATTACK = 10
 
     def __init__(self, type):
         self.type = type
         self.selection = True
         self.x, self.y = random.randint(50, 600), random.randint(50, 500)
-
+        self.fix = False
         self.frame = random.randint(0, 2)
+        global projectiles
         self.idle_frames = 0
-        self.timer = 0
-
+        self.hp = 100
         # self.attack_frames=0
         #projectile = list()
 
@@ -41,7 +44,6 @@ class Pokemon:
     def handle_asleep(self):
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
@@ -55,7 +57,6 @@ class Pokemon:
         self.x -= 2 * self.distance
         timer = SDL_GetTicks()
         #self.idle_frames += 1
-        print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state =  random.randint(0,8)
@@ -74,7 +75,6 @@ class Pokemon:
 
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
@@ -98,7 +98,7 @@ class Pokemon:
 
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
+        # print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
@@ -117,7 +117,6 @@ class Pokemon:
         #     self.idle_frames = 0
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
@@ -133,7 +132,7 @@ class Pokemon:
 
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
+        # print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
@@ -150,7 +149,7 @@ class Pokemon:
 
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
+        # print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
@@ -165,7 +164,6 @@ class Pokemon:
 
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
@@ -179,12 +177,21 @@ class Pokemon:
 
         timer = SDL_GetTicks()
         # self.idle_frames += 1
-        print("%f" % timer)
 
         if SDL_GetTicks() - timer > 300:
             self.state = random.randint(0, 8)
             timer = SDL_GetTicks()
-            print("%f" %timer)
+            # print("%f" %timer)
+
+    # def handle_fix_attack(self):
+    #     time = Time()
+    #     if (SDL_GetTicks() - time.init_time) > 3000:
+    #         self.Meele_Attack()
+    #         time.init_time = SDL_GetTicks()
+
+    ###############skill###################
+
+
 
     handle_state = {
         ASLEEP : handle_asleep,
@@ -196,6 +203,7 @@ class Pokemon:
         RIGHT_RUN: handle_right_run,
         UP_RUN: handle_up_run,
         DOWN_RUN: handle_down_run,
+        #FIX_ATTACK: handle_fix_attack
     }
 
     def handle_event(self, event):
@@ -234,10 +242,20 @@ class Pokemon:
 
 
 
-
-   # def skill(self,state):
-    #    global projectiles
-     #   projectiles.append(Projectile(self))
+    # def fix_timer_create(self):
+    #     self.fix == True
+    #     self.timer = Time()
+    #     print(self.timer.init_time)
+    #
+    # def fix_timer_passes_time(self):
+    #     print(self.timer.passed_time())
+    #     return self.timer.passed_time()
+    #
+    # def fix_timer_initialize(self):
+    #     self.timer.init_time = SDL_GetTicks()
+    #
+    # def fix_timer_update(self):
+    #     self.timer.update()
 
     def update(self,frame_time):
         self.distance = Pokemon.RUN_SPEED_PPS * frame_time
@@ -245,8 +263,6 @@ class Pokemon:
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self)
 
-        if(self.selection==True):
-            print(self.state)
 
     def get_bb(self):
         return self.x - 30, self.y - 30, self.x + 30, self.y + 30
@@ -270,7 +286,7 @@ class Projectile:
 
     image = None
 
-    def __init__(self, Pokemon):
+    def __init__(self, Pokemon: object) -> object:
         self.x,self.y = Pokemon.x,Pokemon.y
         self.frame = 0
         self.dead = 10
