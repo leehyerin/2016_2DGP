@@ -6,9 +6,9 @@ class Time:
         self.font = load_font('ENCR10B.ttf',40)
         self.init_time = SDL_GetTicks()
 
-
     def passed_time(self):
-        return (self.init_time-SDL_GetTicks())
+        return (SDL_GetTicks()-self.init_time)
 
     def update(self):
-        print(self.passed_time())
+        pass
+        # print(self.passed_time())
