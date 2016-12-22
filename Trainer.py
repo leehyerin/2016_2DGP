@@ -1,6 +1,6 @@
 import random
 from pico2d import *
-from TIme import*
+from Time import*
 
 class Trainer():
 
@@ -26,7 +26,8 @@ class Trainer():
             self.x, self.y= 180,10
             self.state = self.UP_RUN
             self.box0 = Turn_dir(200,290)
-            self.box1 = Turn_dir(560,290)
+            self.box1 = Turn_dir(550,290)
+            self.box2 = Turn_dir(550,500)
 
         self.hp = 1000
         self.frame =0
@@ -94,7 +95,7 @@ class Trainer():
         return self.x - 10, self.y - 10, self.x + 10, self.y + 10
 
     def draw(self):
-        self.font.draw(self.x-50, self.y + 50, 'HP: %3.2f' % self.hp)
+        self.font.draw(self.x-50, self.y + 50, 'HP: %d' % self.hp)
         if True == self.isflame:
             self.flame_image.clip_draw(self.frame * 34, 0, 34, 49, self.x, self.y,60,60)
 
@@ -107,6 +108,7 @@ class Trainer():
         if self.stage == 2:
             self.box0.draw()
             self.box1.draw()
+            self.box2.draw()
 
     def flame(self):
         self.timer = Time()
@@ -116,7 +118,6 @@ class Trainer():
         self.hp -= 1
         if self.timer.passed_time() > 5000:
             self.isflame = False
-            self.state = self.LEFT_RUN
 
     def stun(self):
         self.stimer=Time()
@@ -126,8 +127,8 @@ class Trainer():
     def stun_update(self):
         self.hp -= 1
         if self.stimer.passed_time() > 3000:
+            self.state = self.LEFT_RUN
             self.isstun = False
-
 
 
     def update(self, frame_time):
@@ -150,6 +151,15 @@ class Trainer():
                     self.state = self. UP_RUN
                 elif self.state == self.DOWN_RUN:
                     self.state = self.LEFT_RUN
+            if collide(self, self.box2):
+                if self.state == self.UP_RUN:
+                    self.state = self. LEFT_RUN
+                elif self.state == self.RIGHT_RUN:
+                    self.state = self.DOWN_RUN
+
+
+
+
 
 
 def collide(a, b):
