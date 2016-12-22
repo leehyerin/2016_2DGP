@@ -8,13 +8,13 @@ class Pokeball:
             self.x, self.y = 750, 300
         elif self.stage == 2:
             self.x, self.y = 200, 480
-        self.hp =1000
+        self.hp =100
         self.image=load_image('resource/etc/Pokeball.gif')
         self.font = load_font('ENCR10B.TTF')
 
     def draw(self):
         self.image.draw(self.x,self.y)
-        self.font.draw(self.x-50, self.y + 50, 'HP: %3.2f' % self.hp)
+        self.font.draw(self.x-60, self.y - 50, 'HP: %d' % self.hp)
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())

@@ -1,6 +1,6 @@
 import random
 from pico2d import *
-
+from Time import*
 
 class Trainer():
 
@@ -26,13 +26,16 @@ class Trainer():
             self.x, self.y= 180,10
             self.state = self.UP_RUN
             self.box0 = Turn_dir(200,290)
-            self.box1 = Turn_dir(560,290)
+            self.box1 = Turn_dir(550,290)
+            self.box2 = Turn_dir(550,500)
 
         self.hp = 1000
         self.frame =0
         self.total_frames = 0.0
         self.dir = 1
         self.font = load_font('ENCR10B.TTF')
+        self.isflame=False
+        self.isstun =False
 
         if Trainer.image == None:
             if self.type == 'l': #lightning'
@@ -45,6 +48,9 @@ class Trainer():
                 self.image = load_image('resource/trainer/woong.png')
             elif self.type == 'e': #earth
                 self.image = load_image('resource/trainer/woong.png')
+
+        self.flame_image = load_image('resource/skill/flame.png')
+        self.stem_image  = load_image('resource/skill/stem_chain.png')
 
 
     def handle_left_run(self,distance):
@@ -61,10 +67,13 @@ class Trainer():
             self.x = 800
 
     def handle_up_run(self,distance):
-        self.y += 6.5 * distance
-        if self.y > 600:
-            self.state = self.DOWN_RUN
-            self.y = 600
+        if True == self.isstun:
+            pass
+        else:
+            self.y += 6.5 * distance
+            if self.y > 600:
+                self.state = self.DOWN_RUN
+                self.y = 600
 
     def handle_down_run(self,distance):
         self.y -= 6.5 * distance
@@ -86,18 +95,50 @@ class Trainer():
         return self.x - 10, self.y - 10, self.x + 10, self.y + 10
 
     def draw(self):
-        self.font.draw(self.x-50, self.y + 50, 'HP: %3.2f' % self.hp)
+        self.font.draw(self.x-50, self.y + 50, 'HP: %d' % self.hp)
+        if True == self.isflame:
+            self.flame_image.clip_draw(self.frame * 34, 0, 34, 49, self.x, self.y,60,60)
+
         self.image.clip_draw(88 + self.frame * 51, 2 + self.state*60, 48,58, self.x, self.y)
-        self.draw_bb()
+
+        if True == self.isstun:
+            self.stem_image.clip_draw(0, self.frame * 50, 42, 50, self.x, self.y)
+            self.draw_bb()
 
         if self.stage == 2:
             self.box0.draw()
             self.box1.draw()
+            self.box2.draw()
+
+    def flame(self):
+        self.timer = Time()
+        self.isflame=True
+
+    def flame_update(self):
+        self.hp -= 1
+        if self.timer.passed_time() > 5000:
+            self.isflame = False
+
+    def stun(self):
+        self.stimer=Time()
+        self.isstun = True
+        self.state = self.UP_RUN
+
+    def stun_update(self):
+        self.hp -= 1
+        if self.stimer.passed_time() > 3000:
+            self.state = self.LEFT_RUN
+            self.isstun = False
+
 
     def update(self, frame_time):
         distance = Trainer.RUN_SPEED_PPS * frame_time
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self, distance)
+        if True == self.isflame:
+            self.flame_update()
+        if True == self.isstun:
+            self.stun_update()
 
         if self.stage == 2:
             if collide(self, self.box0):
@@ -110,6 +151,15 @@ class Trainer():
                     self.state = self. UP_RUN
                 elif self.state == self.DOWN_RUN:
                     self.state = self.LEFT_RUN
+            if collide(self, self.box2):
+                if self.state == self.UP_RUN:
+                    self.state = self. LEFT_RUN
+                elif self.state == self.RIGHT_RUN:
+                    self.state = self.DOWN_RUN
+
+
+
+
 
 
 def collide(a, b):

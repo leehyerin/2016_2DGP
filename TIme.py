@@ -9,6 +9,7 @@ class Time:
     def passed_time(self):
         return (SDL_GetTicks()-self.init_time)
 
-    def update(self):
-        pass
+    def initialize(self):
+        self.init_time = SDL_GetTicks()
+
         # print(self.passed_time())
