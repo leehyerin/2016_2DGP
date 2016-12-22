@@ -6,10 +6,14 @@ import title_state
 name = "GameOverState"
 image = None
 
+
+
 def enter():
     global image
-    image = load_image('resource/background/kpu_credit.png')
-
+    image = load_image('resource/background/gameover.png')
+    bgm = load_music('resource/sound/victory.mp3')
+    bgm.set_volume(64)
+    bgm.repeat_play()
 
 def exit():
     global image
@@ -24,19 +28,10 @@ def handle_events(frame_time):
         else:
             if (event.type, event.key) == (SDL_KEYDOWN, SDLK_ESCAPE):
                 game_framework.quit()
-            elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE): #restart
-                game_framework.change_state(title_state)
 
 
 def update(frame_time):
-    global name
-    global logo_time
-
-    if (logo_time > 0.5):
-        logo_time = 0
-        game_framework.change_state(title_state)
-        #game_framework.quit()
-    logo_time += frame_time
+    pass
 
 def draw(frame_time):
     global image

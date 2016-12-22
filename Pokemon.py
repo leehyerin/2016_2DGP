@@ -86,7 +86,6 @@ class Pokemon:
         if self.fix == False:
            self.y -= 2 * self.distance
 
-
         if self.y < 50:
             self.state= self.UP_RUN
 
@@ -287,8 +286,8 @@ class Projectile: #Meele attack
             Projectile.remove()
 
 
-    def draw_bb(self):
-        draw_rectangle(*self.get_bb())
+    # def draw_bb(self):
+    #     draw_rectangle(*self.get_bb())
 
     def get_bb(self):
         return self.x - 10, self.y - 10, self.x + 10, self.y + 10

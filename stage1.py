@@ -1,8 +1,8 @@
 import game_framework
+import stage2
 import title_state
 import gameover_state
-import victory_state
-from Map import Map2
+from Map import Map
 from Pokeball import *
 from Projectile import *
 from Skill import*
@@ -11,7 +11,7 @@ from Trainer import *
 from resource_inven import*
 
 
-name = "Stage2"
+name = "Stage1"
 
 map = None
 pokeball = None
@@ -32,15 +32,14 @@ invens = None
 
 def create_world():
     global map, pokeball, trainers, font, pokemons, selection,\
-        projectiles,wide_damage,flame,stem, timing, fix_time, victory_time,  resources, invens, skill_buttons
+        projectiles,wide_damage,flame,stem, timing, fix_time, resources, invens, skill_buttons
     timing = Time()
     fix_time = Time()
-    victory_time=Time()
-    map = Map2()
+    map = Map()
 
-    pokeball = Pokeball(2)
+    pokeball = Pokeball(1)
     trainers = list()
-    trainers.append(Trainer(2))
+    trainers.append(Trainer(1))
     projectiles = list()
     wide_damage = list()
     flame = list()
@@ -133,12 +132,11 @@ def handle_events(frame_time):
 
             else:
                 for pokemon in pokemons:
-                    if pokemon.selection == True:
+                    if pokemon.selection:
                         pokemon.handle_event(event)
+
                 if pokeball.hp <= 0:
                     game_framework.change_state(gameover_state)
-                if victory_time.passed_time() > 50000:
-                    game_framework.change_state(victory_state)
 
 
 def point_collide(self,x,y):
@@ -164,7 +162,7 @@ def skill_1(): #rulili
     for inven in invens:
         if inven.type == 'w':
             if inven.count > 0:
-                inven.count-=1
+                inven.count -= 1
                 return True
 
 
@@ -213,14 +211,14 @@ def create_item(Trainer):
 
 
 def trainer_ai(time):
-    if timing.passed_time()>time and timing.passed_time() < time+48:
-        trainers.append(Trainer(2))
+    if timing.passed_time()>time and timing.passed_time()<time+48:
+        trainers.append(Trainer(1))
 
 
 def update(frame_time):
     for trainer in trainers:
         trainer.update(frame_time)
-    for i in range (22):
+    for i in range (20):
         trainer_ai(i*3000)    #use jason
 
     for trainer in trainers:
@@ -284,6 +282,8 @@ def draw(frame_time):
     pokeball.draw()
     for trainer in trainers:
         trainer.draw()
+    # for button in skill_buttons:
+    #     button.draw()
     for inven in invens:
         inven.draw()
     for pokemon in pokemons:
