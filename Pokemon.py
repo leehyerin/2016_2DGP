@@ -1,7 +1,7 @@
 import random
 from pico2d import *
 
-from TIme import*
+from Time import*
 
 global a,b
 class Pokemon:
@@ -26,6 +26,7 @@ class Pokemon:
         global projectiles
         self.idle_frames = 0
         self.hp = 100
+        self.timer=Time()
         # self.attack_frames=0
         #projectile = list()
 
@@ -37,157 +38,88 @@ class Pokemon:
         elif self.type == 2:
             self.image = load_image('resource/pokemon/piri.png')
         elif self.type == 3:
-            self.image = load_image('resource/pokemon/digda.png')
+            self.image = load_image('resource/pokemon/digda_idle.png')
 
+
+    def Timer(self):
+        self.timer.initialize()
+
+    def Timer_update(self):
+        if self.timer.passed_time() > random.randint(3000, 7000):
+            self.state = random.randint(0, 8)
+            self.Timer()
 
 
     def handle_asleep(self):
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
-
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
+        if self.fix == True:
+            pass
+        self.Timer()
 
         # if self.idle_frames == 20:
         #     self.state = random.randint(0, 7)
         #     self.idle_frames = 0
 
     def handle_left_idle(self):
-        self.x -= 2 * self.distance
-        timer = SDL_GetTicks()
-        #self.idle_frames += 1
-
-        if SDL_GetTicks() - timer > 300:
-            self.state =  random.randint(0,8)
-            timer = SDL_GetTicks()
-            #self.idle_frames=0
+        if self.fix == False:
+            self.x -= 2 * self.distance
 
         if self.x < 50:
             self.state= self.RIGHT_RUN
 
     def handle_right_idle(self):
-        self.x +=2 *  self.distance
-        #self.idle_frames += 1
+        if self.fix == False:
+            self.x +=2 *  self.distance
 
         if self.x > 750:
             self.state= self.LEFT_RUN
-
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
-
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
-
-
-        # if self.idle_frames == 20:
-        #     self.state = random.randint(0,8)
-        #     self.idle_frames = 0
+            self.Timer()
 
     def handle_up_idle(self):
-        self.y +=2 *  self.distance
-        self.idle_frames += 1
+        if self.fix == False:
+            self.y +=2 *  self.distance
 
         if self.y > 350:
             self.state = self.DOWN_RUN
 
-        # if self.idle_frames == 20:
-        #     self.state = random.randint(0,8)
-        #     self.idle_frames = 0
-
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
-        # print("%f" % timer)
-
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
 
     def handle_down_idle(self):
-        self.y -= 2 * self.distance
-        self.idle_frames += 1
+        if self.fix == False:
+           self.y -= 2 * self.distance
 
 
         if self.y < 50:
             self.state= self.UP_RUN
 
-        # if self.idle_frames == 20:
-        #     self.state = random.randint(0,8)
-        #     self.idle_frames = 0
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
-
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
-
     def handle_left_run(self):
-        self.x -=  10 * self.distance
-        self.idle_frames += 1
-
-        # if self.idle_frames == 20:
-        #     self.state = random.randint(0, 8)
-        #     self.idle_frames = 0
-
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
-        # print("%f" % timer)
-
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
+        if self.fix == False:
+            self.x -=  10 * self.distance
 
         if self.x < 50:
             self.state= self.RIGHT_RUN
 
     def handle_right_run(self):
-        self.x +=  10 * self.distance
+        if self.fix == False:
+            self.x +=  10 * self.distance
 
         if self.x > 750:
             self.state= self.LEFT_RUN
 
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
-        # print("%f" % timer)
-
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
-
 
     def handle_up_run(self):
-        self.y += 10 * self.distance
+        if self.fix == False:
+            self.y += 10 * self.distance
 
         if self.y > 350:
             self.state= self.DOWN_RUN
 
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
-
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
-
     def handle_down_run(self):
-        self.y -= 10 * self.distance
+        if self.fix == False:
+            self.y -= 10 * self.distance
 
         if self.y < 50:
             self.state= self.UP_RUN
 
-        timer = SDL_GetTicks()
-        # self.idle_frames += 1
 
-        if SDL_GetTicks() - timer > 300:
-            self.state = random.randint(0, 8)
-            timer = SDL_GetTicks()
-            # print("%f" %timer)
-
-    # def handle_fix_attack(self):
-    #     time = Time()
-    #     if (SDL_GetTicks() - time.init_time) > 3000:
-    #         self.Meele_Attack()
-    #         time.init_time = SDL_GetTicks()
 
     ###############skill###################
 
@@ -241,25 +173,9 @@ class Pokemon:
                 self.state = self.DOWN_IDLE
 
 
-
-    # def fix_timer_create(self):
-    #     self.fix == True
-    #     self.timer = Time()
-    #     print(self.timer.init_time)
-    #
-    # def fix_timer_passes_time(self):
-    #     print(self.timer.passed_time())
-    #     return self.timer.passed_time()
-    #
-    # def fix_timer_initialize(self):
-    #     self.timer.init_time = SDL_GetTicks()
-    #
-    # def fix_timer_update(self):
-    #     self.timer.update()
-
     def update(self,frame_time):
         self.distance = Pokemon.RUN_SPEED_PPS * frame_time
-
+        self.Timer_update()
         self.frame = (self.frame + 1) % 3
         self.handle_state[self.state](self)
 
@@ -268,13 +184,48 @@ class Pokemon:
         return self.x - 30, self.y - 30, self.x + 30, self.y + 30
 
     def draw(self):
-        if self.state== self.ASLEEP:
-            self.image.clip_draw(0, 5 + self.state * 55, 53, 53, self.x, self.y)
+        if self.type == 3:
+            if self.state in (0,1,2,3):
+                self.image = load_image('resource/pokemon/digda_idle.png')
+                self.image.clip_draw(self.frame * 59, self.state * 38, 59, 38, self.x, self.y)
+            elif self.state == self.ASLEEP:
+                self.image = load_image('resource/pokemon/digda_asleep.png')
+                self.image.clip_draw(0, (self.state - 8) * 53, 59, 53, self.x, self.y)
+
+            else:
+                self.image = load_image('resource/pokemon/digda_run.png')
+                self.image.clip_draw(self.frame * 59, (self.state-4) * 38, 59, 38, self.x, self.y)
+
+        elif self.type == 1:
+            if self.state== self.ASLEEP:
+                self.image = load_image('resource/pokemon/bayleaf_asleep.png')
+                self.image.clip_draw(0, (self.state-8) * 50, 50, 50, self.x, self.y)
+            else:
+                self.image = load_image('resource/pokemon/bayleaf.png')
+                self.image.clip_draw(self.frame * 59, self.state * 57, 59, 57, self.x, self.y)
+
+
+        elif self.type == 2:
+            if self.state == self.ASLEEP:
+                self.image = load_image('resource/pokemon/piri_asleep.png')
+                self.image.clip_draw(0, (self.state-8) * 57, 59, 57, self.x, self.y)
+            else:
+                self.image = load_image('resource/pokemon/piri.png')
+                self.image.clip_draw(self.frame * 59, self.state * 57, 59, 57, self.x, self.y)
+
+
+        elif self.type == 0:
+            if self.state== self.ASLEEP:
+                self.image.clip_draw(0, 5 + self.state * 55, 53, 53, self.x, self.y)
+            else:
+                self.image.clip_draw(self.frame * 59, self.state * 57, 59, 57, self.x, self.y)
+
+
         else:
             self.image.clip_draw(self.frame * 59, self.state * 57, 59, 57, self.x, self.y)
 
-
-class Projectile:
+#############################################################################
+class Projectile: #Meele attack
 
     PIXEL_PER_METER = (10.0 / 0.25)  # 10pixel이 25cm임
     RUN_SPEED_KMPH = 20.0
