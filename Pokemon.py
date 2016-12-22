@@ -243,6 +243,8 @@ class Projectile: #Meele attack
         self.dead = 10
         if Projectile. image == None:
             self.image = load_image('poison.png')
+        self.bgm = load_music('resource/sound/skill.mp3')
+        self.bgm.set_volume(128)
         self.state = random.randint(self.LEFT, self.DOWN)
 
 
