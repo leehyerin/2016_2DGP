@@ -135,6 +135,9 @@ def handle_events(frame_time):
                     if pokemon.selection:
                         pokemon.handle_event(event)
 
+                if pokeball.hp <= 0:
+                    game_framework.change_state(gameover_state)
+
 
 def point_collide(self,x,y):
     if (self.x - 30 < x and x < self.x + 30) and (self.y - 30 < y and y < self.y + 30):
@@ -159,7 +162,7 @@ def skill_1(): #rulili
     for inven in invens:
         if inven.type == 'w':
             if inven.count > 0:
-                inven.count-=1
+                inven.count -= 1
                 return True
 
 

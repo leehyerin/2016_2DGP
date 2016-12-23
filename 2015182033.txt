@@ -1,3 +1,46 @@
+Fri Dec 23 03:07:19 2016 +0900 modify
+Fri Dec 23 02:54:33 2016 +0900 add victory_state.py
+Fri Dec 23 00:18:52 2016 +0900 add setup file
+Fri Dec 23 00:01:39 2016 +0900 111
+Thu Dec 22 23:56:05 2016 +0900 wwww
+Thu Dec 22 23:47:55 2016 +0900 pokemon
+Thu Dec 22 23:47:40 2016 +0900 map
+Thu Dec 22 23:47:24 2016 +0900 .
+Thu Dec 22 23:47:11 2016 +0900 sound
+Thu Dec 22 22:45:50 2016 +0900 modify
+Thu Dec 22 22:45:37 2016 +0900 construct stage2.py
+Thu Dec 22 22:45:14 2016 +0900 modify
+Thu Dec 22 22:44:53 2016 +0900 add resource
+Thu Dec 22 22:44:20 2016 +0900 Trainer Turn_dir box
+Thu Dec 22 22:43:57 2016 +0900 class Time
+Thu Dec 22 09:12:07 2016 +0900 add flame, stun state
+Thu Dec 22 09:11:43 2016 +0900 3 kind of skill ^0^
+Thu Dec 22 09:11:13 2016 +0900 add image resource
+Thu Dec 22 07:30:52 2016 +0900 add skill
+Thu Dec 22 07:30:40 2016 +0900 time modify
+Thu Dec 22 07:30:02 2016 +0900 skill 1
+Thu Dec 22 02:24:43 2016 +0900 test
+Thu Dec 22 01:59:23 2016 +0900 testsetup.exe
+Wed Dec 21 20:31:25 2016 +0900 new version
+Wed Dec 21 04:06:12 2016 +0900 skill button - tmp image
+Wed Dec 21 04:05:41 2016 +0900 Skill button
+Wed Dec 21 04:05:26 2016 +0900 UI adjust
+Wed Dec 21 00:36:11 2016 +0900 왼쪽 충돌체크 추가
+Wed Dec 21 00:35:38 2016 +0900 add inventory
+Tue Dec 20 22:28:15 2016 +0900 add class inventory
+Mon Dec 19 23:00:56 2016 +0900 add image
+Sun Dec 18 23:20:46 2016 +0900 pokeball
+Sun Dec 18 23:20:33 2016 +0900 pokeball initial location
+Sun Dec 18 23:20:12 2016 +0900 pokeball
+Thu Dec 15 23:57:52 2016 +0900 add box
+Tue Dec 13 19:59:31 2016 +0900 SDL폴더
+Tue Dec 13 19:59:14 2016 +0900 stage2~ 방향 전환 함수 추가
+Tue Dec 13 18:39:16 2016 +0900 dll
+Sat Dec 10 21:17:12 2016 +0900 add resource
+Wed Dec 7 23:32:45 2016 +0900 distance
+Wed Dec 7 15:31:52 2016 +0900 add item resource
+Tue Dec 6 21:34:10 2016 +0900 add item resource
+Tue Dec 6 21:33:17 2016 +0900 트레이너 type부분 수정
 Fri Dec 2 23:53:22 2016 +0900 class Item()추가
 Fri Dec 2 23:52:59 2016 +0900 forder_item
 Fri Dec 2 23:52:39 2016 +0900 item

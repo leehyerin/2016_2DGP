@@ -86,7 +86,6 @@ class Pokemon:
         if self.fix == False:
            self.y -= 2 * self.distance
 
-
         if self.y < 50:
             self.state= self.UP_RUN
 
@@ -242,7 +241,7 @@ class Projectile: #Meele attack
         self.frame = 0
         self.dead = 10
         if Projectile. image == None:
-            self.image = load_image('poison.png')
+            self.image = load_image('resource/skill/poison.png')
         self.bgm = load_music('resource/sound/skill.mp3')
         self.bgm.set_volume(128)
         self.state = random.randint(self.LEFT, self.DOWN)
@@ -287,8 +286,8 @@ class Projectile: #Meele attack
             Projectile.remove()
 
 
-    def draw_bb(self):
-        draw_rectangle(*self.get_bb())
+    # def draw_bb(self):
+    #     draw_rectangle(*self.get_bb())
 
     def get_bb(self):
         return self.x - 10, self.y - 10, self.x + 10, self.y + 10

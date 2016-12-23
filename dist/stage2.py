@@ -1,6 +1,7 @@
 import game_framework
 import title_state
 import gameover_state
+import victory_state
 from Map import Map2
 from Pokeball import *
 from Projectile import *
@@ -31,9 +32,10 @@ invens = None
 
 def create_world():
     global map, pokeball, trainers, font, pokemons, selection,\
-        projectiles,wide_damage,flame,stem, timing, fix_time, resources, invens, skill_buttons
+        projectiles,wide_damage,flame,stem, timing, fix_time, victory_time,  resources, invens, skill_buttons
     timing = Time()
     fix_time = Time()
+    victory_time=Time()
     map = Map2()
 
     pokeball = Pokeball(2)
@@ -133,6 +135,10 @@ def handle_events(frame_time):
                 for pokemon in pokemons:
                     if pokemon.selection == True:
                         pokemon.handle_event(event)
+                if pokeball.hp <= 0:
+                    game_framework.change_state(gameover_state)
+                if victory_time.passed_time() > 50000:
+                    game_framework.change_state(victory_state)
 
 
 def point_collide(self,x,y):
@@ -214,7 +220,7 @@ def trainer_ai(time):
 def update(frame_time):
     for trainer in trainers:
         trainer.update(frame_time)
-    for i in range (20):
+    for i in range (22):
         trainer_ai(i*3000)    #use jason
 
     for trainer in trainers:
@@ -278,7 +284,6 @@ def draw(frame_time):
     pokeball.draw()
     for trainer in trainers:
         trainer.draw()
-
     for inven in invens:
         inven.draw()
     for pokemon in pokemons:

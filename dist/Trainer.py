@@ -88,8 +88,8 @@ class Trainer():
         DOWN_RUN : handle_down_run
     }
 
-    def draw_bb(self):
-        draw_rectangle(*self.get_bb())
+    # def draw_bb(self):
+    #     draw_rectangle(*self.get_bb())
 
     def get_bb(self):
         return self.x - 10, self.y - 10, self.x + 10, self.y + 10
@@ -103,12 +103,12 @@ class Trainer():
 
         if True == self.isstun:
             self.stem_image.clip_draw(0, self.frame * 50, 42, 50, self.x, self.y)
-            self.draw_bb()
+            # self.draw_bb()
 
-        if self.stage == 2:
-            self.box0.draw()
-            self.box1.draw()
-            self.box2.draw()
+        # if self.stage == 2:
+        #     self.box0.draw()
+        #     self.box1.draw()
+        #     self.box2.draw()
 
     def flame(self):
         self.timer = Time()
